@@ -3,10 +3,35 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  background: #f7f9fa;
-  color: #222;
-  font-family: 'Segoe UI', Arial, sans-serif;
+
+/* Modern font system — tweak easily from :root */
+:root{
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-heading: 'Poppins', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-accent: 'Sora', var(--font-sans);
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace;
+}
+
+/* Apply fonts site-wide */
+html, body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* accent and code */
+.lead-accent { font-family: var(--font-accent); }
+code, pre, .code { font-family: var(--font-mono); }
+
+/* small overrides so Bootstrap components use our fonts */
+.navbar, .btn, .card, .modal-content, .contact-card, .skill-card {
+  font-family: var(--font-sans);
 }
 
 /* Navigation */
@@ -123,7 +148,13 @@ header#home .container {
   align-items: center;
 }
 
+/* larger profile image specifically for the About section */
 #about .profile-img {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 0.75rem; /* rounded rectangle; set 0 for sharp corners */
+  border: 6px solid #0d6efd;
   margin-bottom: 0;
   margin-top: 0;
 }
@@ -152,6 +183,32 @@ header#home .container {
   margin-top: 1rem;
   border-radius: 30px;
   font-weight: 500;
+}
+
+/* force rectangular / rounded-rectangle shape for about image even if rounded-circle class exists */
+#about img.profile-img,
+#about img.profile-img.rounded-circle {
+  border-radius: 0.75rem !important; /* set 0 for sharp corners */
+}
+
+/* responsive adjustments for the larger about image */
+@media (max-width: 991px) {
+  #about .profile-img {
+    width: 260px;
+    height: 260px;
+  }
+}
+@media (max-width: 767px) {
+  #about .profile-img {
+    width: 200px;
+    height: 200px;
+  }
+}
+@media (max-width: 480px) {
+  #about .profile-img {
+    width: 150px;
+    height: 150px;
+  }
 }
 
 /* Skills Section */
