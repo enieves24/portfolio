@@ -455,3 +455,28 @@ header#home .btn:hover {
   background: #145c32;
   color: #fff;
 }
+
+#navbarNav, .nav-resume{
+  text-decoration: none;
+}
+
+.nav-resume::marker {
+  content: none;
+}
+
+.resume-btn {
+  display: inline-block;
+  margin-left: 15px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.resume-btn:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
