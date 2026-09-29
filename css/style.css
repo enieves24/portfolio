@@ -460,23 +460,23 @@ header#home .btn:hover {
   text-decoration: none;
 }
 
-.nav-resume{
+.nav-resume {
   list-style: none;
 }
 
 .resume-btn {
   display: inline-block;
-  margin-left: 15px;
   padding: 8px 16px;
+  margin-left: 10px;
   background-color: #007bff;
-  color: #fff;
+  color: #fff !important;
+  text-decoration: none !important;
   border-radius: 8px;
-  text-decoration: none;
   font-weight: 600;
-  transition: 0.3s ease;
 }
 
 .resume-btn:hover {
   background-color: #0056b3;
-  color: #fff;
+  color: #fff !important;
 }
+
