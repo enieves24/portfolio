@@ -460,8 +460,8 @@ header#home .btn:hover {
   text-decoration: none;
 }
 
-.nav-resume::marker {
-  content: none;
+.nav-resume{
+  list-style: none;
 }
 
 .resume-btn {
